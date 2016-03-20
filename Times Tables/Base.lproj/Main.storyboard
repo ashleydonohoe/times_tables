@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Times_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="qEk-gW-jMR">
+                                <rect key="frame" x="241" y="45" width="118" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="phS-7a-8ZR"/>
+                                </connections>
+                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-nn-43q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xL0-nn-43q" secondAttribute="bottom" constant="8" id="9rV-nS-1VZ"/>
+                            <constraint firstItem="xL0-nn-43q" firstAttribute="top" secondItem="qEk-gW-jMR" secondAttribute="bottom" constant="21" id="Pvz-GQ-2Ry"/>
+                            <constraint firstItem="qEk-gW-jMR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TZB-ed-BAq"/>
+                            <constraint firstItem="xL0-nn-43q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Uyp-hi-YzO"/>
+                            <constraint firstItem="qEk-gW-jMR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cfY-iA-afh"/>
+                            <constraint firstItem="xL0-nn-43q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dbO-aO-tvw"/>
+                            <constraint firstItem="qEk-gW-jMR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="wJM-9l-dMt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xL0-nn-43q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TZB-ed-BAq"/>
+                                <exclude reference="cfY-iA-afh"/>
+                                <exclude reference="wJM-9l-dMt"/>
+                                <exclude reference="Pvz-GQ-2Ry"/>
+                                <exclude reference="Uyp-hi-YzO"/>
+                                <exclude reference="dbO-aO-tvw"/>
+                                <exclude reference="9rV-nS-1VZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xL0-nn-43q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TZB-ed-BAq"/>
+                                <include reference="cfY-iA-afh"/>
+                                <include reference="wJM-9l-dMt"/>
+                                <include reference="Pvz-GQ-2Ry"/>
+                                <include reference="Uyp-hi-YzO"/>
+                                <include reference="dbO-aO-tvw"/>
+                                <include reference="9rV-nS-1VZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="sliderValue" destination="qEk-gW-jMR" id="k1P-32-ePK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="429"/>
+        </scene>
+    </scenes>
+</document>
