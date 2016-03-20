@@ -8,34 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var sliderValue: UISlider!
     
+    @IBOutlet weak var table: UITableView!
 
     @IBAction func sliderMoved(sender: UISlider) {
-        let numberChosen = Int(sliderValue.value)
-        let timesSolutions = [
-            "0 * \(numberChosen) = \(numberChosen * 0)",
-            "1 * \(numberChosen) = \(numberChosen * 1)",
-            "2 * \(numberChosen) = \(numberChosen * 2)",
-            "3 * \(numberChosen) = \(numberChosen * 3)",
-            "4 * \(numberChosen) = \(numberChosen * 4)",
-            "5 * \(numberChosen) = \(numberChosen * 5)",
-            "6 * \(numberChosen) = \(numberChosen * 6)",
-            "7 * \(numberChosen) = \(numberChosen * 7)",
-            "8 * \(numberChosen) = \(numberChosen * 8)",
-            "9 * \(numberChosen) = \(numberChosen * 9)",
-            "10 * \(numberChosen) = \(numberChosen * 10)",
-            "11 * \(numberChosen) = \(numberChosen * 11)",
-            "12 * \(numberChosen) = \(numberChosen * 12)"
+        table.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        ]
-        for item in timesSolutions {
-            print(item)
-        }
+        return 12
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        
+        let timesTable = Int(sliderValue.value * 12)
+        
+        cell.textLabel?.text = String(timesTable * (indexPath.row + 1))
+        
+        return cell
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
